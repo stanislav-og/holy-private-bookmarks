@@ -485,6 +485,37 @@ async function init() {
   } else {
     showSection('login');
   }
+  // About modal handlers
+const aboutBtn = document.getElementById('about-btn');
+if (aboutBtn) {
+    aboutBtn.addEventListener('click', () => {
+        document.getElementById('about-modal').style.display = 'flex';
+    });
+}
+
+const closeAboutBtn = document.getElementById('close-about');
+if (closeAboutBtn) {
+    closeAboutBtn.addEventListener('click', () => {
+        document.getElementById('about-modal').style.display = 'none';
+    });
+}
+
+const openGitHubBtn = document.getElementById('open-github');
+if (openGitHubBtn) {
+    openGitHubBtn.addEventListener('click', () => {
+        chrome.tabs.create({ 
+            url: 'https://github.com/OSV-IT-Studio/holy-private-bookmarks' 
+        });
+        document.getElementById('about-modal').style.display = 'none';
+    });
+}
+
+// Close modal when clicking outside
+document.getElementById('about-modal').addEventListener('click', (e) => {
+    if (e.target.id === 'about-modal') {
+        e.target.style.display = 'none';
+    }
+});
 }
 
 function showSection(id) {
