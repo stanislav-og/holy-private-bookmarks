@@ -21,8 +21,11 @@ No one except you (not even us) can read them — everything is encrypted with a
 
 ## Screenshots
 
-![Main screen](screenshots/main.png)
+![Main screen](screenshots/main-1.png)
+![Main screen](screenshots/main-2.png)
+![Main screen](screenshots/main-3.png)
 ![Settings](screenshots/settings.png)
+![Settings](screenshots/settings-2.png)
 
 ## Installation
 
