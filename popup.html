@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holy Private Bookmarks</title>
+	<link rel="stylesheet" href="popup.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Setup -->
+        <div id="setup" class="section">
+            <h1 data-i18n="extensionName">🔒 Holy Private</h1>
+            <p class="subtitle" data-i18n="createPassword">Create a master password for full bookmark encryption</p>
+            <input type="password" id="new-pass" data-i18n="newPassword" placeholder="New password">
+            <input type="password" id="confirm-pass" data-i18n="confirmPassword" placeholder="Confirm password">
+
+            <div class="password-warning" style="
+                background: rgba(255, 64, 96, 0.1);
+                border-radius: 12px;
+                padding: 16px;
+                margin: 16px 0;
+                border-left: 4px solid var(--danger);
+                text-align: left;
+                font-size: 14px;
+                color: var(--text-secondary);
+            ">
+                <p style="margin: 0 0 8px 0; color: var(--text-primary); font-weight: 600;">
+                    ⚠️ <span id="important-warning-text"></span>
+                </p>
+                <ul style="margin: 0; padding-left: 20px; line-height: 1.5;">
+                    <li><span id="cannot-recover-text"></span></li>
+                    <li><span id="no-reset-text"></span></li>
+                    <li><span id="dont-store-text"></span></li>
+                    <li><span id="encrypted-only-text"></span></li>
+                </ul>
+                <p style="margin: 12px 0 0 0; font-weight: 600; color: var(--accent);">
+                    💡 <span id="save-password-text"></span>
+                </p>
+            </div>
+
+            <button class="btn-primary" id="create-pass" data-i18n="createStorage">🔐 Create storage</button>
+        </div>
+
+        <!-- Login -->
+        <div id="login" class="section">
+            <h1 data-i18n="extensionName">🔒 Holy Private</h1>
+            <p class="subtitle" data-i18n="enterMasterPassword">Enter your master password to unlock</p>
+            <input type="password" id="password" data-i18n="masterPassword" placeholder="Master password">
+            <button class="btn-primary" id="unlock" data-i18n="unlock">🔓 Unlock</button>
+        </div>
+
+        <!-- Main Menu -->
+        <div id="main" class="section">
+            <div class="top-right-buttons">
+                <button id="support-btn" class="top-right-btn" title="Support Project">❤️</button>
+                <button id="settings-btn" class="top-right-btn" title="Settings">⚙️</button>
+            </div>
+
+            <h1 data-i18n="extensionName">Holy Private Bookmarks</h1>
+            <p class="subtitle" data-i18n="bookmarksProtected">Your bookmarks are securely protected</p>
+
+
+            <div class="button-grid">
+                <div class="circle-menu">
+                    <button class="circle-button add" id="add-current">
+                        <div class="button-text">
+                            <div class="icon" id="add-currentdiv">➕</div>
+                        </div>
+                    </button>
+
+                    <button class="circle-button actions" id="clear-history">
+                        <div class="button-text">
+                            <div class="icon" id="clear-historydiv">🧹️</div>
+                        </div>
+                    </button>
+
+                    <div class="circle-divider"></div>
+                </div>
+                <button class="circle-center" id="lock">
+                    <div class="button-text">
+                        <div class="icon">🔒</div>
+                    </div>
+                </button>
+            </div>
+
+            
+            <div id="tree"></div>
+        </div>
+
+        <!-- Settings -->
+        <div id="settings" class="section">
+            <button id="back" data-i18n="back">← Back</button>
+            <h1 data-i18n="settings" style="padding-bottom: 30px;">⚙️ Settings</h1>
+
+            <div class="settings-section">
+                <h3 class="section-title" data-i18n="changeMasterPassword">Change Master Password</h3>
+                <input type="password" id="old-pass" data-i18n="currentPassword" placeholder="Current password">
+                <input type="password" id="new-pass2" data-i18n="newPassword2" placeholder="New password">
+                <input type="password" id="confirm-pass2" data-i18n="confirmNewPassword"
+                    placeholder="Confirm new password">
+                <button class="btn-primary w-100 mt-16" id="change-pass" data-i18n="changePassword">
+                    🔑 Change Password
+                </button>
+            </div>
+
+            <div class="settings-section">
+                <h3 class="section-title" data-i18n="exportImport">Export & Import</h3>
+                <div class="settings-buttons-grid">
+                    <button class="settings-full-btn export" id="export">
+                        <span class="icon">📤</span>
+                        <div class="btn-content">
+                            <div class="btn-title" data-i18n="export">Export Bookmarks</div>
+                            <div class="btn-description" data-i18n="exportDesc">Download encrypted backup file</div>
+                        </div>
+                        <span class="btn-arrow">→</span>
+                    </button>
+
+                    <button class="settings-full-btn import" id="import-btn">
+                        <span class="icon">📥</span>
+                        <div class="btn-content">
+                            <div class="btn-title" data-i18n="import">Import Bookmarks</div>
+                            <div class="btn-description" data-i18n="importDesc">Restore from backup file</div>
+                        </div>
+                        <span class="btn-arrow">→</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="settings-section">
+                <h3 class="section-title" data-i18n="importFromChrome">Import from Chrome</h3>
+                <div class="settings-buttons-grid">
+                    <button class="settings-full-btn chrome" id="import-from-chrome">
+                        <span class="icon">🌐</span>
+                        <div class="btn-content">
+                            <div class="btn-title" data-i18n="importChromeBookmarks">Import All Bookmarks</div>
+                            <div class="btn-description" data-i18n="importChromeDesc">Import all bookmarks from Chrome
+                            </div>
+                        </div>
+                        <span class="btn-arrow">→</span>
+                    </button>
+
+                    <button class="settings-full-btn chrome" id="import-from-chrome-advanced">
+                        <span class="icon">🗂️</span>
+                        <div class="btn-content">
+                            <div class="btn-title" data-i18n="importChromeBookmarksAdvanced">Selective Import</div>
+                            <div class="btn-description" data-i18n="importChromeAdvancedDesc">Choose specific folders to
+                                import</div>
+                        </div>
+                        <span class="btn-arrow">→</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div id="add-bookmark-modal">
+        <div class="modal-content">
+            <h2 style="margin-top:0; color:var(--accent);" id="modal-title-text">Add bookmark</h2>
+            <p><strong data-i18n="page">Page</strong> <span id="modal-page-title"></span></p>
+            <label data-i18n="title">Title:</label>
+            <input type="text" id="modal-bookmark-title" data-i18n="title" placeholder="Bookmark title">
+            <label data-i18n="url">URL:</label>
+            <input type="text" id="modal-bookmark-url" data-i18n="url" placeholder="https://example.com">
+            <label data-i18n="folder">Folder:</label>
+            <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 20px;">
+                <select id="folder-select" style="flex: 1;">
+                    <option value="" data-i18n="rootFolder">Root folder</option>
+                </select>
+                <button class="btn-secondary" id="new-folder-in-modal" style="padding: 12px 14px; font-size: 14px;"
+                    data-i18n="new">+ New</button>
+            </div>
+            <div class="modal-buttons">
+                <button class="btn-secondary" id="modal-cancel" data-i18n="cancel">Cancel</button>
+                <button class="btn-primary" id="modal-save" data-i18n="save">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden input for importing files -->
+    <input type="file" id="import-file" accept=".json" style="display:none">
+
+    <!-- Context menu -->
+    <div id="context-menu" class="context-menu">
+        <div class="context-menu-item" id="ctx-new-folder">
+            <span class="icon">📁</span>
+            <span data-i18n="newFolder">New folder</span>
+        </div>
+        <div class="context-menu-item" id="ctx-new-bookmark">
+            <span class="icon">🔗</span>
+            <span data-i18n="newBookmark">New bookmark</span>
+        </div>
+        <div class="context-menu-divider"></div>
+        <div class="context-menu-item" id="ctx-paste">
+            <span class="icon">📋</span>
+            <span data-i18n="paste">Paste</span>
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+
+</html>
