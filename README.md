@@ -48,7 +48,3 @@ If you find the extension useful, any support is greatly appreciated:
 - Ethereum (ETH): `0xAc862138b1ebF8d7F4fdb23D821489Cf91c314d0`
 
 ❤️ Thank you!
-
----
-
-Made with ❤️ by Stanislav
