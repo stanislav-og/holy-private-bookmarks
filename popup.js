@@ -42,6 +42,10 @@ function getEmptyTreeMessages() {
     newFolder: getMessage('newFolder') || 'New Folder'
   };
 }
+function normalizePath(path) {
+  if (!Array.isArray(path)) return [];
+  return path.filter(i => Number.isInteger(i) && i >= 0);
+}
 
 function getOrCreateElement(selector) {
   if (!domCache[selector]) {
@@ -585,40 +589,49 @@ function openAddBookmarkModal(pageTitle, pageUrl, editPath = null) {
 
 // Save handler in modal window
 function handleModalSave() {
-  const modal = getOrCreateElement('#add-bookmark-modal');
+  const modal = document.getElementById('add-bookmark-modal');
   if (!modal) return;
-  
+
   const titleInput = document.getElementById('modal-bookmark-title');
   const urlInput = document.getElementById('modal-bookmark-url');
-  
+
   const title = titleInput.value.trim();
   const url = urlInput.value.trim();
-  
-  if (!title || !url) {
-    showNotification(getMessage('titleRequired') || 'Title and URL are required', true);
-    return;
-  }
-  
-  if (!url.startsWith('http://') && !url.startsWith('https://')) {
-    showNotification(getMessage('validUrl') || 'Please enter a valid URL starting with http:// or https://', true);
-    return;
-  }
-  
-  const pathStr = document.getElementById('folder-select').value;
-  const newPath = pathStr ? pathStr.split('/').map(i => parseInt(i, 10)) : [];
-  
 
-  if (newPath.some(isNaN)) {
-    showNotification(getMessage('invalidPath') || 'Invalid folder path', true);
+  if (!title || !url) {
+    showNotification('Title and URL are required', true);
     return;
   }
-  
+
+  if (!url.startsWith('http://') && !url.startsWith('https://')) {
+    showNotification('Please enter a valid URL starting with http:// or https://', true);
+    return;
+  }
+
+  const pathStr = document.getElementById('folder-select').value;
+
+  let newPath = [];
+  if (pathStr !== '') {
+    newPath = pathStr
+      .split('/')
+      .map(Number)
+      .filter(Number.isInteger);
+  }
+
+  if (newPath.length > 0) {
+    const target = getItemByPath(newPath);
+    if (!target || target.type !== 'folder') {
+      showNotification('Selected path is not a folder', true);
+      return;
+    }
+  }
+
   if (editingBookmarkPath) {
     updateBookmark(editingBookmarkPath, title, url, newPath);
   } else {
     addNewBookmark(title, url, newPath);
   }
-  
+
   saveAndRefresh().then(() => {
     modal.style.display = 'none';
     editingBookmarkPath = null;
@@ -626,33 +639,47 @@ function handleModalSave() {
 }
 
 
-function updateBookmark(oldPath, title, url, newPath) {
-  const oldParent = getParentByPath(oldPath.slice(0, -1));
-  const oldPathIndex = oldPath[oldPath.length - 1];
-  
-  if (!oldParent || oldParent.length <= oldPathIndex) {
-    console.error('Invalid old path for update:', oldPath);
+
+function updateBookmark(oldPath, title, url, newPathRaw) {
+  const newPath = normalizePath(newPathRaw);
+  const oldFolderPath = normalizePath(oldPath.slice(0, -1));
+
+  const sourceParent = getParentByPath(oldFolderPath);
+  const sourceIndex = oldPath[oldPath.length - 1];
+  const bookmark = sourceParent[sourceIndex];
+
+  if (!bookmark) {
+    console.error('Bookmark not found at path:', oldPath);
     return;
   }
-  
 
-  const bookmark = oldParent[oldPathIndex];
+
   bookmark.title = title;
   bookmark.url = url;
-  
 
-  const oldPathStr = oldPath.slice(0, -1).join('/');
-  const newPathStr = newPath.join('/');
-  
-  if (newPathStr !== oldPathStr) {
-
-    oldParent.splice(oldPathIndex, 1);
-    
-
-    let newParent = getParentByPath(newPath);
-    newParent.push(bookmark);
+  if (oldFolderPath.join('/') === newPath.join('/')) {
+    return;
   }
+
+  let targetArray;
+
+  if (newPath.length === 0) {
+    targetArray = data.folders;
+  } else {
+    const folder = getItemByPath(newPath);
+    if (!folder || folder.type !== 'folder' || !Array.isArray(folder.children)) {
+      console.error('Target path is not a folder:', newPath);
+      return;
+    }
+    targetArray = folder.children;
+  }
+
+  sourceParent.splice(sourceIndex, 1);
+
+  targetArray.push(bookmark);
 }
+
+
 
 // Add a new bookmark
 function addNewBookmark(title, url, path) {
@@ -1329,7 +1356,7 @@ async function importData(e) {
     await chrome.storage.local.set({ [STORAGE_KEY]: json });
     showNotification(getMessage('importSuccess') || 'Import successful');
     
-    // Перезагрузка страницы
+
     setTimeout(() => {
       lock();
       showSection('login');
@@ -1623,22 +1650,22 @@ function convertChromeBookmarksFull(chromeNodes) {
   return result;
 }
 
-function buildFolderOptions(folders, select, prefix = '', depth = 0) {
-  folders.forEach((folder, index) => {
-    if (folder.type === 'folder') {
-      const option = document.createElement('option');
-      option.value = prefix ? `${prefix}/${index}` : index.toString();
-      option.textContent = '— '.repeat(depth) + folder.name;
-      select.appendChild(option);
-      
+function buildFolderOptions(items, select, prefix = '', depth = 0) {
+  items.forEach((item, index) => {
+    if (!item || item.type !== 'folder') return;
 
-      if (folder.children && folder.children.length > 0) {
-        const newPrefix = prefix ? `${prefix}/${index}` : index.toString();
-        buildFolderOptions(folder.children, select, newPrefix, depth + 1);
-      }
+    const option = document.createElement('option');
+    option.value = prefix ? `${prefix}/${index}` : index.toString();
+    option.textContent = '— '.repeat(depth) + item.name;
+    select.appendChild(option);
+
+    if (Array.isArray(item.children) && item.children.length > 0) {
+      const newPrefix = prefix ? `${prefix}/${index}` : index.toString();
+      buildFolderOptions(item.children, select, newPrefix, depth + 1);
     }
   });
 }
+
 
 function startAutoLock() {
   clearTimeout(autoLockTimer);
