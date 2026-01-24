@@ -1,10 +1,9 @@
 {
   "manifest_version": 3,
   "name": "__MSG_extensionName__",
-  "version": "1.7.4",
+  "version": "1.7.8",
   "description": "__MSG_extensionDescription__",
   "default_locale": "en",
-  "homepage_url": "https://github.com/OSV-IT-Studio/holy-private-bookmarks",
   "permissions": [
     "storage", 
     "contextMenus", 
@@ -34,7 +33,7 @@
     "128": "icons/icon128.png"
   },
   "web_accessible_resources": [{
-    "resources": ["donate.html", "donate.js", "icons/*.png"],
+    "resources": ["donate.html", "donate.js", "manager.html", "manager.js", "icons/*.png"],
     "matches": ["<all_urls>"]
   }],
   "content_security_policy": {

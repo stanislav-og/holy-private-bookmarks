@@ -417,6 +417,11 @@ async function init() {
   initContextMenu();
   initQuickActions();
   
+   
+  // ОТПРАВКА СООБЩЕНИЯ ДЛЯ ПЕРЕЗАГРУЗКИ manager
+  chrome.runtime.sendMessage({ action: 'reloadmanager' });
+  
+  
   const [stored, session] = await Promise.all([
     chrome.storage.local.get(STORAGE_KEY),
     chrome.storage.session.get('pendingBookmarkAdd')
@@ -441,7 +446,8 @@ async function init() {
     '#settings-btn': () => showSection('settings'),
     '#back': () => showSection('main'),
     '#change-pass': changeMasterPassword,
-    '#modal-cancel': () => getOrCreateElement('#add-bookmark-modal').style.display = 'none'
+    '#modal-cancel': () => getOrCreateElement('#add-bookmark-modal').style.display = 'none',
+	'#manager-btn': openmanager
   };
   
   Object.entries(handlers).forEach(([selector, handler]) => {
@@ -586,7 +592,46 @@ function openAddBookmarkModal(pageTitle, pageUrl, editPath = null) {
   
   modal.style.display = 'flex';
 }
-
+// ДОБАВЬТЕ ЭТУ ФУНКЦИЮ:
+async function openmanager() {
+  // Закрываем popup
+  window.close();
+  
+  // Проверяем, открыт ли уже manager
+  const managerUrl = chrome.runtime.getURL('manager.html');
+  
+  try {
+    // Ищем существующую вкладку с manager
+    const tabs = await chrome.tabs.query({ url: managerUrl });
+    
+    if (tabs.length > 0 && tabs[0].id) {
+      // manager уже открыт — активируем его
+      await chrome.tabs.update(tabs[0].id, { active: true });
+      
+      // Фокусируем окно
+      await chrome.windows.update(tabs[0].windowId, { focused: true });
+      
+      // Отправляем сообщение для перезагрузки данных в manager
+      try {
+        chrome.tabs.sendMessage(tabs[0].id, { action: 'refreshData' });
+      } catch (e) {
+        // Если сообщение не доставлено, manager перезагрузит данные сам
+        console.log('manager might need to reload manually');
+      }
+    } else {
+      // manager не открыт — создаём новую вкладку
+      chrome.tabs.create({
+        url: managerUrl
+      });
+    }
+  } catch (error) {
+    console.error('Error opening manager:', error);
+    // Fallback: просто открываем новую вкладку
+    chrome.tabs.create({
+      url: managerUrl
+    });
+  }
+}
 // Save handler in modal window
 function handleModalSave() {
   const modal = document.getElementById('add-bookmark-modal');
@@ -928,50 +973,43 @@ function createBookmarkElement(item, path) {
   
   const domain = getDomainFromUrl(item.url);
   
-
+  // Создаем ссылку для всего элемента
+  const link = document.createElement('a');
+  link.href = item.url;
+  link.target = '_blank';
+  link.title = item.url;
+  link.className = 'bookmark-link';
+  
   const header = document.createElement('div');
   header.className = 'item-header';
   
   const titleDiv = document.createElement('div');
   titleDiv.className = 'item-title';
   
-
   const iconSpan = document.createElement('span');
   iconSpan.className = 'icon bookmark';
   iconSpan.textContent = '🔗';
   iconSpan.style.cssText = 'margin-right: 8px; font-size: 16px;';
+  
+  // Текст закладки теперь в отдельном span
+  const textSpan = document.createElement('span');
+  textSpan.textContent = item.title;
+  textSpan.style.cssText = 'color: var(--accent); display: inline-block; max-width: 300px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; vertical-align: middle;';
+  
   titleDiv.appendChild(iconSpan);
+  titleDiv.appendChild(textSpan);
   
-
-  const link = document.createElement('a');
-  link.href = item.url;
-  link.target = '_blank';
-  link.title = item.url;
-  link.textContent = item.title;
-  link.style.cssText = 'color: var(--accent); text-decoration: none; transition: var(--transition); display: inline-block; max-width: 300px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; vertical-align: middle;';
-  link.addEventListener('mouseenter', () => {
-    link.style.color = 'var(--accent-hover)';
-    link.style.textDecoration = 'underline';
-  });
-  link.addEventListener('mouseleave', () => {
-    link.style.color = 'var(--accent)';
-    link.style.textDecoration = 'none';
-  });
-  titleDiv.appendChild(link);
-  
-
   const domainSpan = document.createElement('span');
   domainSpan.className = 'item-domain';
   domainSpan.style.cssText = 'font-size: 11px; color: var(--text-secondary); margin-left: 8px; font-family: monospace; opacity: 0.7;';
   domainSpan.textContent = domain;
   titleDiv.appendChild(domainSpan);
   
-
+  // Быстрые действия
   const quickActions = document.createElement('div');
   quickActions.className = 'quick-actions-hover';
   quickActions.style.cssText = 'position: absolute; right: 10px; top: 50%; transform: translateY(-50%); display: none; gap: 4px; background: var(--card-bg); backdrop-filter: blur(10px); border: 1px solid var(--card-border); border-radius: 8px; padding: 4px; z-index: 10;';
   
-
   const editBtn = document.createElement('button');
   editBtn.className = 'quick-action-btn-small';
   editBtn.title = getMessage('edit') || 'Edit';
@@ -979,10 +1017,10 @@ function createBookmarkElement(item, path) {
   editBtn.textContent = '✏️';
   editBtn.addEventListener('click', function(e) {
     e.stopPropagation();
+    e.preventDefault();
     editBookmark(path.join(','));
   });
   
-
   const copyBtn = document.createElement('button');
   copyBtn.className = 'quick-action-btn-small';
   copyBtn.title = getMessage('copyUrl') || 'Copy URL';
@@ -990,17 +1028,18 @@ function createBookmarkElement(item, path) {
   copyBtn.textContent = '📋';
   copyBtn.addEventListener('click', function(e) {
     e.stopPropagation();
+    e.preventDefault();
     copyBookmarkUrl(item.url);
   });
   
-
   const deleteBtn = document.createElement('button');
   deleteBtn.className = 'quick-action-btn-small delete';
   deleteBtn.title = getMessage('delete') || 'Delete';
   deleteBtn.style.cssText = 'width: 28px; height: 28px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 12px; background: rgba(255, 64, 96, 0.1); border: none; color: #ff7b9c; cursor: pointer; transition: all 0.2s ease;';
-  deleteBtn.textContent = '✖';
+  deleteBtn.textContent = '🗑️';
   deleteBtn.addEventListener('click', function(e) {
     e.stopPropagation();
+    e.preventDefault();
     if (confirm(getMessage('deleteConfirm'))) {
       deleteBookmark(path.join(','));
     }
@@ -1012,9 +1051,27 @@ function createBookmarkElement(item, path) {
   
   titleDiv.appendChild(quickActions);
   header.appendChild(titleDiv);
-  div.appendChild(header);
   
-
+  // Добавляем header внутрь ссылки
+  link.appendChild(header);
+  
+  // Добавляем ссылку в div
+  div.appendChild(link);
+  
+  // Стили для ссылки, чтобы она занимала всю область
+  link.style.cssText = 'display: block; text-decoration: none; color: inherit;';
+  
+  // Эффект при наведении на всю ссылку
+  link.addEventListener('mouseenter', () => {
+    textSpan.style.color = 'var(--accent-hover)';
+    textSpan.style.textDecoration = 'underline';
+  });
+  link.addEventListener('mouseleave', () => {
+    textSpan.style.color = 'var(--accent)';
+    textSpan.style.textDecoration = 'none';
+  });
+  
+  // Показываем быстрые действия при наведении на элемент
   div.addEventListener('mouseenter', function() {
     quickActions.style.display = 'flex';
   });
@@ -1023,7 +1080,7 @@ function createBookmarkElement(item, path) {
     quickActions.style.display = 'none';
   });
   
-
+  // Загружаем фавикон
   loadFaviconAsync(item.url, iconSpan);
   
   return div;
@@ -1063,7 +1120,7 @@ function createFolderElement(item, path) {
       </div>
       <div class="actions">
         <button class="action-btn" data-action="rename" data-path="${path.join(',')}">✏️</button>
-        <button class="action-btn delete" data-action="delete" data-path="${path.join(',')}">✖</button>
+        <button class="action-btn delete" data-action="delete" data-path="${path.join(',')}">🗑️</button>
       </div>
     </div>
     <div class="subitems collapsed"></div>
@@ -1432,10 +1489,7 @@ function showChromeImportModal(bookmarkNodes) {
   content.innerHTML = `
     <h2 style="margin-top:0; color:var(--accent);">${getMessage('selectFoldersToImport') || 'Select folders to import'}</h2>
     <div id="folders-list" style="margin: 20px 0; max-height: 300px; overflow-y: auto;"></div>
-    <div style="display: flex; gap: 8px; margin: 16px 0;">
-      <button class="btn-secondary" id="select-all-folders">${getMessage('selectAll') || 'Select all'}</button>
-      <button class="btn-secondary" id="deselect-all-folders">${getMessage('deselectAll') || 'Deselect all'}</button>
-    </div>
+
     <div class="modal-buttons">
       <button class="btn-secondary" id="cancel-import">${getMessage('cancel')}</button>
       <button class="btn-primary" id="confirm-import">${getMessage('importSelected') || 'Import selected'}</button>
@@ -1548,23 +1602,7 @@ function showChromeImportModal(bookmarkNodes) {
   renderFolders(bookmarkNodes);
   
 
-  content.querySelector('#select-all-folders').addEventListener('click', () => {
-    const checkboxes = foldersList.querySelectorAll('input[type="checkbox"]:not(:disabled)');
-    checkboxes.forEach(checkbox => {
-      checkbox.checked = true;
-      checkbox.dispatchEvent(new Event('change'));
-    });
-  });
-  
-  content.querySelector('#deselect-all-folders').addEventListener('click', () => {
-    const checkboxes = foldersList.querySelectorAll('input[type="checkbox"]');
-    checkboxes.forEach(checkbox => {
-      checkbox.checked = false;
-      checkbox.disabled = false;
-      checkbox.dispatchEvent(new Event('change'));
-    });
-    selectedFolders.clear();
-  });
+ 
   
   content.querySelector('#cancel-import').addEventListener('click', () => {
     document.body.removeChild(modal);

@@ -1,0 +1,138 @@
+:root {
+      --bg: linear-gradient(135deg, #0f0f17 0%, #1a1a2e 50%, #16213e 100%);
+      --card-bg: rgba(255, 255, 255, 0.08);
+      --card-border: rgba(255, 255, 255, 0.1);
+      --text-primary: #ffffff;
+      --text-secondary: rgba(255, 255, 255, 0.75);
+      --accent: #00d4ff;
+      --shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+      --radius: 18px;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      min-height: 620px;
+      margin: auto;
+      padding: 24px;
+      background: var(--bg);
+      color: var(--text-primary);
+      box-sizing: border-box;
+    }
+
+    h1 {
+      font-size: 24px;
+      font-weight: 700;
+      text-align: center;
+      margin: 0 0 8px;
+      background: linear-gradient(90deg, #00d4ff, #a0f1ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 14px;
+      margin-bottom: 32px;
+    }
+
+    .donate-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 20px;
+      margin-bottom: 24px;
+      text-align: center;
+      backdrop-filter: blur(12px);
+      box-shadow: var(--shadow);
+    }
+
+    .donate-card h3 {
+      margin: 0 0 16px;
+      color: var(--accent);
+      font-size: 18px;
+    }
+
+    .qr {
+      width: 200px;
+      height: 200px;
+      margin: 16px auto;
+      background: white;
+      padding: 12px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+
+    .address {
+      margin: 16px 0;
+      padding: 12px;
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 10px;
+      word-break: break-all;
+      font-family: monospace;
+      font-size: 14px;
+      color: var(--accent);
+    }
+
+    .copy-btn {
+      background: rgba(255, 255, 255, 0.15);
+      border: none;
+      padding: 8px 16px;
+      border-radius: 8px;
+      color: white;
+      cursor: pointer;
+      margin-top: 8px;
+      font-size: 14px;
+      transition: background 0.3s ease;
+    }
+
+    .copy-btn:hover {
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    .back-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: rgba(255, 255, 255, 0.15);
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      font-size: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .back-btn:hover {
+      background: rgba(255, 255, 255, 0.25);
+    }
+    
+    .donate-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin: 20px 0 24px;
+    }
+
+    .notification {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: rgba(0, 212, 255, 0.9);
+      color: white;
+      padding: 12px 20px;
+      border-radius: 10px;
+      z-index: 1000;
+      font-weight: 500;
+      animation: fadeInOut 2s ease-in-out;
+    }
+
+    @keyframes fadeInOut {
+      0% { opacity: 0; transform: translateY(-10px); }
+      15% { opacity: 1; transform: translateY(0); }
+      85% { opacity: 1; transform: translateY(0); }
+      100% { opacity: 0; transform: translateY(-10px); }
+    }

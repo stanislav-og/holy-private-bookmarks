@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Holy Private Bookmarks</title>
-	<link rel="stylesheet" href="popup.css">
+    <link rel="stylesheet" href="popup.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 
@@ -61,33 +61,36 @@
             </div>
 
             <h1 data-i18n="extensionName">Holy Private Bookmarks</h1>
-            <p class="subtitle" data-i18n="bookmarksProtected">Your bookmarks are securely protected</p>
 
 
-            <div class="button-grid">
-                <div class="circle-menu">
-                    <button class="circle-button add" id="add-current">
-                        <div class="button-text">
-                            <div class="icon" id="add-currentdiv">➕</div>
-                        </div>
+            <div class="menu" style="position: relative; width: 100%; max-width: 640px; height: 120px; margin: 40px auto 30px auto;">
+
+                <div class="top-panel" style="position: absolute; top: 0; left: 0; width: 100%; height: 85px; display: flex; border-radius: 20px; overflow: hidden;">
+
+                    <button id="add-current" class="menu-btn left-btn" data-i18n="addCurrentPage">➕
                     </button>
+                    <div style="flex: 1;"></div>
 
-                    <button class="circle-button actions" id="clear-history">
-                        <div class="button-text">
+                    <button id="clear-history" class="menu-btn right-btn actions">
+                       <div class="button-text">
                             <div class="icon" id="clear-historydiv">🧹️</div>
                         </div>
                     </button>
-
-                    <div class="circle-divider"></div>
                 </div>
-                <button class="circle-center" id="lock">
-                    <div class="button-text">
-                        <div class="icon">🔒</div>
-                    </div>
+
+
+                <button id="lock" class="menu-btn center-btn" title="Lock">
+                    <img src="icons/Lock.png">
+                </button>
+
+
+                <button id="manager-btn" class="menu-btn bottom-btn" >
+                    <div class="button-text" style="margin-top: 15px;">
+                            <div class="icon" data-i18n="manager"></div><div class="beta">beta</div> 
+                        </div> 
                 </button>
             </div>
 
-            
             <div id="tree"></div>
         </div>
 
@@ -154,24 +157,22 @@
                     </button>
                 </div>
             </div>
-        
-		
-<div class="settings-section">
-    <h3 class="section-title" data-i18n="about">About</h3>
-    <div class="settings-buttons-grid">
-        <button class="settings-full-btn" id="about-btn">
-            <span class="icon">ℹ️</span>
-            <div class="btn-content">
-                <div class="btn-title" data-i18n="aboutExtension">About Extension</div>
+
+            <div class="settings-section">
+                <h3 class="section-title" data-i18n="about">About</h3>
+                <div class="settings-buttons-grid">
+                    <button class="settings-full-btn" id="about-btn">
+                        <span class="icon">ℹ️</span>
+                        <div class="btn-content">
+                            <div class="btn-title" data-i18n="aboutExtension">About Extension</div>
+                        </div>
+                        <span class="btn-arrow">→</span>
+                    </button>
+                </div>
             </div>
-            <span class="btn-arrow">→</span>
-        </button>
-    </div>
-</div>		
-    </div>
-</div>
-    
-    <div id="add-bookmark-modal">
+        </div>
+
+         <div id="add-bookmark-modal">
         <div class="modal-content">
             <h2 style="margin-top:0; color:var(--accent);" id="modal-title-text">Add bookmark</h2>
             <p><strong data-i18n="page">Page</strong> <span id="modal-page-title"></span></p>
@@ -194,7 +195,7 @@
         </div>
     </div>
 
-    <!-- Hidden input for importing files -->
+
     <input type="file" id="import-file" accept=".json" style="display:none">
 <div id="about-modal" class="modal" style="display: none;">
     <div class="modal-content" style="max-width: 500px;">
@@ -213,7 +214,7 @@
             <div style="background: rgba(255, 255, 255, 0.05); padding: 16px; border-radius: 12px; margin-bottom: 20px;">
                 <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
                     <span style="color: var(--text-secondary);" data-i18n="version">Version:</span>
-                    <span style="color: var(--text-primary); font-weight: 600;">1.7.4</span>
+                    <span style="color: var(--text-primary); font-weight: 600;">1.7.8</span>
                 </div>
                 <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
                     <span style="color: var(--text-secondary);">Developer:</span>
@@ -271,6 +272,5 @@
 
     <script src="popup.js"></script>
 </body>
-
 
 </html>
