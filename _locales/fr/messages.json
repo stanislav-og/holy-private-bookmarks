@@ -6,7 +6,7 @@
     "message": "Marque-pages entièrement privés avec mot de passe maître, dossiers et chiffrement"
   },
   "createPassword": {
-    "message": "Créez un mot de passe maître pour le chiffrement complet des marque-pages"
+    "message": "Créez un mot de passe maître pour un chiffrement complet des marque-pages"
   },
   "newPassword": {
     "message": "Nouveau mot de passe (min. 6 caractères)"
@@ -78,44 +78,34 @@
     "message": "📥 Importer"
   },
   "importFromChrome": {
-    "message": "Importer depuis Chrome",
-    "description": "Titre de la section d'importation Chrome"
+    "message": "Importer depuis Chrome"
   },
   "importChromeBookmarks": {
-    "message": "📥 Importer tous les marque-pages Chrome",
-    "description": "Bouton pour importer tous les marque-pages Chrome"
+    "message": "📥 Importer tous les marque-pages Chrome"
   },
   "importChromeBookmarksAdvanced": {
-    "message": "🗂️ Sélectionner des dossiers à importer",
-    "description": "Bouton pour sélectionner des dossiers à importer"
+    "message": "🗂️ Sélectionner des dossiers à importer"
   },
   "importChromeConfirm": {
-    "message": "Importer tous les marque-pages depuis Chrome ? Les marque-pages existants seront conservés.",
-    "description": "Confirmation pour l'importation depuis Chrome"
+    "message": "Importer tous les marque-pages de Chrome ? Les marque-pages existants seront conservés."
   },
   "importChromeSuccess": {
-    "message": "Marque-pages importés avec succès !",
-    "description": "Notification de réussite d'importation"
+    "message": "Marque-pages importés avec succès !"
   },
   "importChromeError": {
-    "message": "Échec de l'importation des marque-pages",
-    "description": "Erreur d'importation"
+    "message": "Échec de l'importation des marque-pages"
   },
   "selectFoldersToImport": {
-    "message": "Sélectionner les dossiers à importer",
-    "description": "Titre de la fenêtre de sélection"
+    "message": "Sélectionner les dossiers à importer"
   },
   "selectAll": {
-    "message": "Tout sélectionner",
-    "description": "Bouton pour tout sélectionner"
+    "message": "Tout sélectionner"
   },
   "deselectAll": {
-    "message": "Tout désélectionner",
-    "description": "Bouton pour tout désélectionner"
+    "message": "Tout désélectionner"
   },
   "importSelected": {
-    "message": "Importer",
-    "description": "Bouton pour importer la sélection"
+    "message": "Importer"
   },
   "back": {
     "message": "← Retour"
@@ -175,7 +165,7 @@
     "message": "Fichier de sauvegarde invalide"
   },
   "clearHistoryConfirm": {
-    "message": "⚠️ Supprimer TOUTES les entrées d'historique pour les domaines présents dans Holy Private Bookmarks ?\n\nCela supprimera les visites de TOUTES les pages de ces sites (pas seulement celles enregistrées).\nAction irréversible."
+    "message": "⚠️ Supprimer TOUTES les entrées de l'historique du navigateur pour les domaines présents dans vos Holy Private Bookmarks ?\n\nCela supprimera les visites de TOUTES les pages de ces sites (pas seulement celles enregistrées).\nCette action est irréversible."
   },
   "noBookmarks": {
     "message": "Aucun marque-page trouvé — rien à effacer."
@@ -193,13 +183,13 @@
     "message": "Nouveau dossier"
   },
   "emptyTreeTitle": {
-    "message": "Pas encore de marque-pages"
+    "message": "Aucun marque-page pour l'instant"
   },
   "emptyTreeSubtitle": {
     "message": "Ajoutez votre premier marque-page ou dossier pour commencer"
   },
   "historyCleared": {
-    "message": "🧹 Historique effacé !\nSupprimé $count$ visite(s) sur $domains$ domaine(s).",
+    "message": "🧹 Historique effacé !\n$count$ visite(s) supprimée(s) de $domains$ domaine(s).",
     "placeholders": {
       "count": {
         "content": "$1"
@@ -210,50 +200,34 @@
     }
   },
   "addToHoly": {
-    "message": "Ajouter à Holy Private Bookmarks"
+    "message": "Ajouter aux Holy Private Bookmarks"
   },
   "cannotAddPage": {
     "message": "Impossible d'ajouter cette page (URL non valide)"
   },
-  "extensionName": {
-    "message": "Holy Private Bookmarks",
-    "description": "Nom de l'extension"
-  },
-  "extensionDescription": {
-    "message": "Gestionnaire de marque-pages chiffré sécurisé",
-    "description": "Description de l'extension"
-  },
   "supportPageTitle": {
-    "message": "Soutenir le projet — Holy Private Bookmarks",
-    "description": "Titre de la page de dons"
+    "message": "Soutenir le projet — Holy Private Bookmarks"
   },
   "supportTitle": {
-    "message": "❤️ Soutenir le Projet",
-    "description": "Titre principal de la page de dons"
+    "message": "❤️ Soutenir le Projet"
   },
   "supportDescription": {
-    "message": "Si cette extension vous est utile — toute aide est appréciée",
-    "description": "Description sur la page de dons"
+    "message": "Si l'extension vous est utile — toute aide est appréciée"
   },
   "bitcoinTitle": {
-    "message": "Bitcoin (BTC)",
-    "description": "Titre pour les dons Bitcoin"
+    "message": "Bitcoin (BTC)"
   },
   "ethereumTitle": {
-    "message": "Ethereum (ETH)",
-    "description": "Titre pour les dons Ethereum"
+    "message": "Ethereum (ETH)"
   },
   "copyAddress": {
-    "message": "Copier l'adresse",
-    "description": "Texte du bouton de copie d'adresse"
+    "message": "Copier l'adresse"
   },
   "copiedToClipboard": {
-    "message": "Adresse copiée !",
-    "description": "Notification de copie réussie"
+    "message": "Adresse copiée dans le presse-papiers !"
   },
   "clickToCopy": {
-    "message": "Cliquer pour copier",
-    "description": "Info-bulle pour les adresses cliquables"
+    "message": "Cliquer pour copier"
   },
   "importantWarning": {
     "message": "AVERTISSEMENT IMPORTANT :"
@@ -262,95 +236,153 @@
     "message": "Ce mot de passe NE PEUT PAS être récupéré !"
   },
   "noPasswordReset": {
-    "message": "Il n'y a AUCUNE option de réinitialisation de mot de passe"
+    "message": "Il n'y a AUCUNE option de réinitialisation du mot de passe"
   },
   "weDontStorePassword": {
     "message": "Nous NE stockons PAS votre mot de passe"
   },
   "bookmarksEncrypted": {
-    "message": "Vos marque-pages sont chiffrés UNIQUEMENT avec ce mot de passe"
+    "message": "Vos marque-pages sont chiffrés avec ce mot de passe uniquement"
   },
   "savePasswordSecurely": {
     "message": "Conservez ce mot de passe en lieu sûr !"
   },
   "copyUrl": {
-    "message": "Copier l'URL",
-    "description": "Info-bulle du bouton de copie d'URL"
+    "message": "Copier l'URL"
   },
   "edit": {
-    "message": "Modifier",
-    "description": "Info-bulle du bouton de modification"
+    "message": "Modifier"
   },
   "delete": {
-    "message": "Supprimer",
-    "description": "Info-bulle du bouton de suppression"
+    "message": "Supprimer"
   },
   "urlCopied": {
-    "message": "URL copiée",
-    "description": "Notification de copie d'URL"
+    "message": "URL copiée dans le presse-papiers"
   },
-    "about": {
-    "message": "À propos",
-    "description": "Titre de la section À propos"
+  "about": {
+    "message": "À propos"
   },
   "aboutExtension": {
-    "message": "À propos de l'extension",
-    "description": "Texte du bouton À propos de l'extension"
+    "message": "À propos de l'extension"
   },
   "openGitHub": {
-    "message": "Ouvrir GitHub",
-    "description": "Texte du bouton Ouvrir GitHub"
+    "message": "Ouvrir GitHub"
   },
   "close": {
-    "message": "Fermer",
-    "description": "Texte du bouton Fermer"
+    "message": "Fermer"
   },
   "features": {
-    "message": "Fonctionnalités",
-    "description": "Titre de la section Fonctionnalités"
+    "message": "Fonctionnalités"
   },
   "encryption": {
-    "message": "Chiffrement",
-    "description": "Titre de la fonctionnalité Chiffrement"
+    "message": "Chiffrement"
   },
   "encryptionDesc": {
-    "message": "Chiffrement AES-256",
-    "description": "Description de la fonctionnalité Chiffrement"
+    "message": "Chiffrement AES-256"
   },
   "localStorage": {
-    "message": "Stockage local",
-    "description": "Titre de la fonctionnalité Stockage local"
+    "message": "Stockage Local"
   },
   "localStorageDesc": {
-    "message": "Les données restent sur votre appareil",
-    "description": "Description de la fonctionnalité Stockage local"
+    "message": "Les données restent sur votre appareil"
   },
   "privacy": {
-    "message": "Confidentialité",
-    "description": "Titre de la fonctionnalité Confidentialité"
+    "message": "Confidentialité"
   },
   "privacyDesc": {
-    "message": "Pas de suivi ni d'analytiques",
-    "description": "Description de la fonctionnalité Confidentialité"
+    "message": "Aucun suivi ni analyse"
   },
   "openSource": {
-    "message": "WTFPL v2",
-    "description": "Titre de la fonctionnalité Open source"
+    "message": "WTFPL v2"
   },
   "viewOnGitHub": {
-    "message": "Voir sur GitHub",
-    "description": "Bouton Voir sur GitHub"
+    "message": "Voir sur GitHub"
   },
   "githubRepo": {
-    "message": "Dépôt GitHub",
-    "description": "Texte du bouton Dépôt GitHub"
+    "message": "Dépôt GitHub"
   },
   "githubRepoDesc": {
-    "message": "Voir le code source, signaler des problèmes, contribuer",
-    "description": "Description du dépôt GitHub"
+    "message": "Voir le code source, signaler des problèmes, contribuer"
   },
   "version": {
-    "message": "Version",
-    "description": "Libellé Version"
+    "message": "Version"
+  },
+  "openmanager": {
+    "message": "Ouvrir le gestionnaire"
+  },
+  "managerDesc": {
+    "message": "Ouvrir le gestionnaire de marque-pages en plein écran"
+  },
+  "folders": {
+    "message": "Dossiers"
+  },
+  "bookmarks": {
+    "message": "marque-pages"
+  },
+  "allBookmarks": {
+    "message": "Tous les marque-pages"
+  },
+  "bookmarksCount": {
+    "message": "marque-pages"
+  },
+  "searchBookmarks": {
+    "message": "Rechercher des marque-pages..."
+  },
+  "noBookmarksInFolder": {
+    "message": "Aucun marque-page dans ce dossier"
+  },
+  "addBookmarksToGetStarted": {
+    "message": "Ajoutez des marque-pages pour commencer"
+  },
+  "bookmarkUpdated": {
+    "message": "Marque-page mis à jour"
+  },
+  "bookmarkDeleted": {
+    "message": "Marque-page supprimé"
+  },
+  "renameFolder": {
+    "message": "Renommer le dossier"
+  },
+  "folderCreated": {
+    "message": "Dossier créé avec succès"
+  },
+  "managerLocked": {
+    "message": "Gestionnaire verrouillé"
+  },
+  "lockManager": {
+    "message": "🔓 Verrouiller le gestionnaire"
+  },
+  "manager": {
+    "message": "🗂 Ouvrir le gestionnaire complet"
+  },
+  "rename": {
+    "message": "Renommer"
+  },
+  "renameFolder": {
+    "message": "Renommer le dossier"
+  },
+  "deleteFolder": {
+    "message": "Supprimer le dossier"
+  },
+  "deleteFolderConfirm": {
+    "message": "Supprimer le dossier « {0} » ?"
+  },
+  "deleteFolderWarning": {
+    "message": "Tout le contenu sera définitivement supprimé."
+  },
+  "folderRenamed": {
+    "message": "Dossier renommé avec succès"
+  },
+  "folderDeleted": {
+    "message": "Dossier supprimé avec succès"
+  },
+  "cannotRenameAll": {
+    "message": "Impossible de renommer le dossier « Tous les marque-pages »"
+  },
+  "cannotDeleteAll": {
+    "message": "Impossible de supprimer le dossier « Tous les marque-pages »"
+  },
+  "foldersCount": {
+    "message": "{0} dossiers"
   }
 }

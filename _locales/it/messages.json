@@ -30,7 +30,7 @@
     "message": "Password errata"
   },
   "passwordsMismatch": {
-    "message": "Le password non coincidono o sono troppo corte"
+    "message": "Le password non corrispondono o sono troppo corte"
   },
   "bookmarksProtected": {
     "message": "I tuoi segnalibri sono protetti in modo sicuro"
@@ -42,7 +42,7 @@
     "message": "📁 Nuova cartella"
   },
   "clearHistory": {
-    "message": "🧹️ Pulisci cronologia"
+    "message": "🧹️ Cancella cronologia"
   },
   "supportProject": {
     "message": "❤️ Supporta il progetto"
@@ -50,7 +50,7 @@
   "settings": {
     "message": "⚙️ Impostazioni"
   },
-   "settingsbtn": {
+  "settingsbtn": {
     "message": "⚙️"
   },
   "changeMasterPassword": {
@@ -69,7 +69,7 @@
     "message": "🔑 Cambia password"
   },
   "exportImport": {
-    "message": "Esporta & Importa"
+    "message": "Esporta e Importa"
   },
   "export": {
     "message": "📤 Esporta"
@@ -78,44 +78,34 @@
     "message": "📥 Importa"
   },
   "importFromChrome": {
-    "message": "Importa da Chrome",
-    "description": "Title of the Chrome import section"
+    "message": "Importa da Chrome"
   },
   "importChromeBookmarks": {
-    "message": "📥 Importa tutti i segnalibri di Chrome",
-    "description": "Button to import all Chrome bookmarks"
+    "message": "📥 Importa tutti i segnalibri di Chrome"
   },
   "importChromeBookmarksAdvanced": {
-    "message": "🗂️ Seleziona cartelle da importare",
-    "description": "Button to select folders for import"
+    "message": "🗂️ Seleziona cartelle da importare"
   },
   "importChromeConfirm": {
-    "message": "Importare tutti i segnalibri da Chrome? I segnalibri esistenti saranno preservati.",
-    "description": "Confirmation for importing bookmarks from Chrome"
+    "message": "Importare tutti i segnalibri da Chrome? I segnalibri esistenti verranno preservati."
   },
   "importChromeSuccess": {
-    "message": "Segnalibri importati con successo!",
-    "description": "Notification for successful bookmark import"
+    "message": "Segnalibri importati con successo!"
   },
   "importChromeError": {
-    "message": "Importazione segnalibri fallita",
-    "description": "Bookmark import error"
+    "message": "Importazione segnalibri fallita"
   },
   "selectFoldersToImport": {
-    "message": "Seleziona cartelle da importare",
-    "description": "Title of the folder selection modal"
+    "message": "Seleziona cartelle da importare"
   },
   "selectAll": {
-    "message": "Seleziona tutto",
-    "description": "Button to select all"
+    "message": "Seleziona tutto"
   },
   "deselectAll": {
-    "message": "Deseleziona tutto",
-    "description": "Button to deselect all"
+    "message": "Deseleziona tutto"
   },
   "importSelected": {
-    "message": "Importa",
-    "description": "Button to import selected folders"
+    "message": "Importa"
   },
   "back": {
     "message": "← Indietro"
@@ -169,38 +159,37 @@
     "message": "Password cambiata con successo!"
   },
   "importSuccess": {
-    "message": "Backup importato con successo! Riapri il popup."
+    "message": "Backup importato con successo! Per favore, riapri il popup."
   },
   "invalidFile": {
     "message": "File di backup non valido"
   },
   "clearHistoryConfirm": {
-    "message": "⚠️ Eliminare TUTTE le voci della cronologia del browser per i domini presenti nei tuoi Holy Private Bookmarks?\n\nQuesto rimuoverà le visite a TUTTE le pagine di questi siti (non solo quelle con segnalibro).\nAzione irreversibile."
+    "message": "⚠️ Eliminare TUTTE le voci della cronologia del browser per i domini presenti nei tuoi Holy Private Bookmarks?\n\nQuesto rimuoverà le visite a TUTTE le pagine di questi siti (non solo quelle con segnalibro).\nL'azione non può essere annullata."
   },
   "noBookmarks": {
-    "message": "Nessun segnalibro trovato — nulla da cancellare."
+    "message": "Nessun segnalibro trovato — niente da cancellare."
   },
   "noDomains": {
     "message": "Nessun dominio valido trovato nei segnalibri."
   },
-
   "newBookmark": {
     "message": "Nuovo segnalibro"
   },
   "paste": {
     "message": "Incolla"
   },
-    "ctxnewFolder": {
+  "ctxnewFolder": {
     "message": "Nuova cartella"
   },
-    "emptyTreeTitle": {
+  "emptyTreeTitle": {
     "message": "Ancora nessun segnalibro"
   },
-    "emptyTreeSubtitle": {
+  "emptyTreeSubtitle": {
     "message": "Aggiungi il tuo primo segnalibro o cartella per iniziare"
   },
   "historyCleared": {
-    "message": "🧹 Cronologia cancellata!\nRimosse $count$ visita/e da $domains$ dominio/i.",
+    "message": "🧹 Cronologia cancellata!\nRimosse $count$ visita(e) da $domains$ dominio(i).",
     "placeholders": {
       "count": {
         "content": "$1"
@@ -214,47 +203,31 @@
     "message": "Aggiungi a Holy Private Bookmarks"
   },
   "cannotAddPage": {
-    "message": "Impossibile aggiungere questa pagina (URL non valido)"
-  },
- "extensionName": {
-    "message": "Holy Private Bookmarks",
-    "description": "Extension name"
-  },
-  "extensionDescription": {
-    "message": "Gestore di segnalibri sicuro e crittografato",
-    "description": "Extension description"
+    "message": "Impossibile aggiungere questa pagina (nessun URL valido)"
   },
   "supportPageTitle": {
-    "message": "Supporta il progetto — Holy Private Bookmarks",
-    "description": "Donate page title"
+    "message": "Supporta il progetto — Holy Private Bookmarks"
   },
   "supportTitle": {
-    "message": "❤️ Supporta il Progetto",
-    "description": "Main title on donate page"
+    "message": "❤️ Supporta il Progetto"
   },
   "supportDescription": {
-    "message": "Se l'estensione ti è utile — qualsiasi aiuto è apprezzato",
-    "description": "Description on donate page"
+    "message": "Se l'estensione ti è utile — qualsiasi aiuto è apprezzato"
   },
   "bitcoinTitle": {
-    "message": "Bitcoin (BTC)",
-    "description": "Bitcoin donation title"
+    "message": "Bitcoin (BTC)"
   },
   "ethereumTitle": {
-    "message": "Ethereum (ETH)",
-    "description": "Ethereum donation title"
+    "message": "Ethereum (ETH)"
   },
   "copyAddress": {
-    "message": "Copia indirizzo",
-    "description": "Copy address button text"
+    "message": "Copia indirizzo"
   },
   "copiedToClipboard": {
-    "message": "Indirizzo copiato negli appunti!",
-    "description": "Notification when address is copied"
+    "message": "Indirizzo copiato negli appunti!"
   },
-"clickToCopy": {
-    "message": "Clicca per copiare",
-    "description": "Tooltip for clickable addresses"
+  "clickToCopy": {
+    "message": "Clicca per copiare"
   },
   "importantWarning": {
     "message": "AVVISO IMPORTANTE:"
@@ -263,160 +236,153 @@
     "message": "Questa password NON PUÒ essere recuperata!"
   },
   "noPasswordReset": {
-    "message": "NON esiste un'opzione di ripristino password"
+    "message": "NON esiste un'opzione per reimpostare la password"
   },
   "weDontStorePassword": {
-    "message": "NOI NON memorizziamo la tua password da nessuna parte"
+    "message": "NON memorizziamo la tua password da nessuna parte"
   },
   "bookmarksEncrypted": {
-    "message": "I tuoi segnalibri sono crittografati SOLO con questa password"
+    "message": "I tuoi segnalibri sono crittati SOLO con questa password"
   },
   "savePasswordSecurely": {
     "message": "Salva questa password in modo sicuro!"
-},
+  },
   "copyUrl": {
-    "message": "Copia URL",
-    "description": "Copy URL button tooltip"
+    "message": "Copia URL"
   },
   "edit": {
-    "message": "Modifica",
-    "description": "Edit button tooltip"
+    "message": "Modifica"
   },
   "delete": {
-    "message": "Elimina",
-    "description": "Delete button tooltip"
+    "message": "Elimina"
   },
   "urlCopied": {
-    "message": "URL copiato negli appunti",
-    "description": "URL copied notification"
+    "message": "URL copiato negli appunti"
   },
   "about": {
-    "message": "Informazioni",
-    "description": "Titolo della sezione Informazioni"
+    "message": "Informazioni"
   },
   "aboutExtension": {
-    "message": "Informazioni sull'estensione",
-    "description": "Testo del pulsante Informazioni estensione"
-  },
-
-  "openGitHub": {
-    "message": "Apri GitHub",
-    "description": "Testo del pulsante Apri GitHub"
-  },
-  "close": {
-    "message": "Chiudi",
-    "description": "Testo del pulsante Chiudi"
-  },
-  "features": {
-    "message": "Funzionalità",
-    "description": "Titolo della sezione Funzionalità"
-  },
-  "encryption": {
-    "message": "Crittografia",
-    "description": "Titolo della funzionalità Crittografia"
-  },
-  "encryptionDesc": {
-    "message": "Crittografia AES-256",
-    "description": "Descrizione della funzionalità Crittografia"
-  },
-  "localStorage": {
-    "message": "Memoria Locale",
-    "description": "Titolo della funzionalità Memoria Locale"
-  },
-  "localStorageDesc": {
-    "message": "I dati rimangono sul tuo dispositivo",
-    "description": "Descrizione della funzionalità Memoria Locale"
-  },
-  "privacy": {
-    "message": "Privacy",
-    "description": "Titolo della funzionalità Privacy"
-  },
-  "privacyDesc": {
-    "message": "Nessun tracciamento o analisi",
-    "description": "Descrizione della funzionalità Privacy"
-  },
-  "openSource": {
-    "message": "WTFPL v2",
-    "description": "Titolo della funzionalità Open Source (nome licenza lasciato invariato)"
-  },
-  "viewOnGitHub": {
-    "message": "Vedi su GitHub",
-    "description": "Testo del pulsante Vedi su GitHub"
-  },
-  "githubRepo": {
-    "message": "Repository GitHub",
-    "description": "Testo del pulsante Repository GitHub"
-  },
-  "githubRepoDesc": {
-    "message": "Visualizza il codice sorgente, segnala problemi, contribuisci",
-    "description": "Descrizione del repository GitHub"
-  },
-  "version": {
-    "message": "Versione",
-    "description": "Etichetta Versione"
-  },
-  "about": {
-    "message": "Про розширення",
-    "description": "Заголовок розділу «Про розширення»"
-  },
-  "aboutExtension": {
-    "message": "Про розширення",
-    "description": "Текст кнопки «Про розширення»"
+    "message": "Informazioni sull'estensione"
   },
   "openGitHub": {
-    "message": "Відкрити GitHub",
-    "description": "Текст кнопки «Відкрити GitHub»"
+    "message": "Apri GitHub"
   },
   "close": {
-    "message": "Закрити",
-    "description": "Текст кнопки «Закрити»"
+    "message": "Chiudi"
   },
   "features": {
-    "message": "Можливості",
-    "description": "Заголовок розділу «Можливості»"
+    "message": "Funzionalità"
   },
   "encryption": {
-    "message": "Шифрування",
-    "description": "Заголовок можливості «Шифрування»"
+    "message": "Crittografia"
   },
   "encryptionDesc": {
-    "message": "Шифрування AES-256",
-    "description": "Опис можливості «Шифрування»"
+    "message": "Crittografia AES-256"
   },
   "localStorage": {
-    "message": "Локальне сховище",
-    "description": "Заголовок можливості «Локальне сховище»"
+    "message": "Archiviazione Locale"
   },
   "localStorageDesc": {
-    "message": "Дані залишаються на вашому пристрої",
-    "description": "Опис можливості «Локальне сховище»"
+    "message": "I dati rimangono sul tuo dispositivo"
   },
   "privacy": {
-    "message": "Приватність",
-    "description": "Заголовок можливості «Приватність»"
+    "message": "Privacy"
   },
   "privacyDesc": {
-    "message": "Жодного відстеження чи аналітики",
-    "description": "Опис можливості «Приватність»"
+    "message": "Nessun tracciamento o analisi"
   },
   "openSource": {
-    "message": "WTFPL v2",
-    "description": "Заголовок можливості «Відкритий код» (ліцензія)"
+    "message": "WTFPL v2"
   },
   "viewOnGitHub": {
-    "message": "Переглянути на GitHub",
-    "description": "Текст кнопки «Переглянути на GitHub»"
+    "message": "Vedi su GitHub"
   },
   "githubRepo": {
-    "message": "Репозиторій GitHub",
-    "description": "Текст кнопки «Репозиторій GitHub»"
+    "message": "Repository GitHub"
   },
   "githubRepoDesc": {
-    "message": "Переглянути вихідний код, повідомити про проблеми, зробити внесок",
-    "description": "Опис репозиторію GitHub"
+    "message": "Vedi il codice sorgente, segnala problemi, contribuisci"
   },
   "version": {
-    "message": "Версія",
-    "description": "Мітка «Версія»"
+    "message": "Versione"
+  },
+  "openmanager": {
+    "message": "Apri gestore"
+  },
+  "managerDesc": {
+    "message": "Apri il gestore segnalibri a schermo intero"
+  },
+  "folders": {
+    "message": "Cartelle"
+  },
+  "bookmarks": {
+    "message": "segnalibri"
+  },
+  "allBookmarks": {
+    "message": "Tutti i Segnalibri"
+  },
+  "bookmarksCount": {
+    "message": "segnalibri"
+  },
+  "searchBookmarks": {
+    "message": "Cerca segnalibri..."
+  },
+  "noBookmarksInFolder": {
+    "message": "Nessun segnalibro in questa cartella"
+  },
+  "addBookmarksToGetStarted": {
+    "message": "Aggiungi segnalibri per iniziare"
+  },
+  "bookmarkUpdated": {
+    "message": "Segnalibro aggiornato"
+  },
+  "bookmarkDeleted": {
+    "message": "Segnalibro eliminato"
+  },
+  "renameFolder": {
+    "message": "Rinomina cartella"
+  },
+  "folderCreated": {
+    "message": "Cartella creata con successo"
+  },
+  "managerLocked": {
+    "message": "Gestore bloccato"
+  },
+  "lockManager": {
+    "message": "🔓 Blocca Gestore"
+  },
+  "manager": {
+    "message": "🗂 Apri gestore completo"
+  },
+  "rename": {
+    "message": "Rinomina"
+  },
+  "renameFolder": {
+    "message": "Rinomina cartella"
+  },
+  "deleteFolder": {
+    "message": "Elimina cartella"
+  },
+  "deleteFolderConfirm": {
+    "message": "Eliminare la cartella \"{0}\"?"
+  },
+  "deleteFolderWarning": {
+    "message": "Tutti i contenuti saranno eliminati definitivamente."
+  },
+  "folderRenamed": {
+    "message": "Cartella rinominata con successo"
+  },
+  "folderDeleted": {
+    "message": "Cartella eliminata con successo"
+  },
+  "cannotRenameAll": {
+    "message": "Impossibile rinominare la cartella \"Tutti i segnalibri\""
+  },
+  "cannotDeleteAll": {
+    "message": "Impossibile eliminare la cartella \"Tutti i segnalibri\""
+  },
+  "foldersCount": {
+    "message": "{0} cartelle"
   }
 }

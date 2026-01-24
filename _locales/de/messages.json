@@ -3,13 +3,13 @@
     "message": "Holy Private Bookmarks"
   },
   "extensionDescription": {
-    "message": "Völlig private Lesezeichen mit Master-Passwort, Ordnern und Verschlüsselung"
+    "message": "Völlig private Lesezeichen mit Hauptpasswort, Ordnern und Verschlüsselung"
   },
   "createPassword": {
-    "message": "Erstellen Sie ein Master-Passwort für die vollständige Verschlüsselung Ihrer Lesezeichen"
+    "message": "Erstellen Sie ein Hauptpasswort für die vollständige Verschlüsselung Ihrer Lesezeichen"
   },
   "newPassword": {
-    "message": "Neues Passwort (min. 6 Zeichen)"
+    "message": "Neues Passwort (mind. 6 Zeichen)"
   },
   "confirmPassword": {
     "message": "Passwort bestätigen"
@@ -18,10 +18,10 @@
     "message": "🔐 Speicher erstellen"
   },
   "enterMasterPassword": {
-    "message": "Geben Sie Ihr Master-Passwort zum Entsperren ein"
+    "message": "Geben Sie Ihr Hauptpasswort zum Entsperren ein"
   },
   "masterPassword": {
-    "message": "Master-Passwort"
+    "message": "Hauptpasswort"
   },
   "unlock": {
     "message": "🔓 Entsperren"
@@ -45,16 +45,16 @@
     "message": "🧹️ Verlauf löschen"
   },
   "supportProject": {
-    "message": "❤️ Das Projekt unterstützen"
+    "message": "❤️ Projekt unterstützen"
   },
   "settings": {
     "message": "⚙️ Einstellungen"
   },
-   "settingsbtn": {
+  "settingsbtn": {
     "message": "⚙️"
   },
   "changeMasterPassword": {
-    "message": "Master-Passwort ändern"
+    "message": "Hauptpasswort ändern"
   },
   "currentPassword": {
     "message": "Aktuelles Passwort"
@@ -78,7 +78,7 @@
     "message": "📥 Importieren"
   },
   "importFromChrome": {
-    "message": "Von Chrome importieren"
+    "message": "Aus Chrome importieren"
   },
   "importChromeBookmarks": {
     "message": "📥 Alle Chrome-Lesezeichen importieren"
@@ -87,13 +87,13 @@
     "message": "🗂️ Ordner zum Import auswählen"
   },
   "importChromeConfirm": {
-    "message": "Alle Lesezeichen aus Chrome importieren? Bestehende Lesezeichen bleiben erhalten."
+    "message": "Alle Lesezeichen aus Chrome importieren? Vorhandene Lesezeichen bleiben erhalten."
   },
   "importChromeSuccess": {
     "message": "Lesezeichen erfolgreich importiert!"
   },
   "importChromeError": {
-    "message": "Lesezeichen konnten nicht importiert werden"
+    "message": "Import der Lesezeichen fehlgeschlagen"
   },
   "selectFoldersToImport": {
     "message": "Zu importierende Ordner auswählen"
@@ -159,13 +159,13 @@
     "message": "Passwort erfolgreich geändert!"
   },
   "importSuccess": {
-    "message": "Backup erfolgreich importiert! Bitte öffnen Sie das Popup erneut."
+    "message": "Sicherung erfolgreich importiert! Bitte öffnen Sie das Popup erneut."
   },
   "invalidFile": {
-    "message": "Ungültige Backup-Datei"
+    "message": "Ungültige Sicherungsdatei"
   },
   "clearHistoryConfirm": {
-    "message": "⚠️ ALLE Browserverlauf-Einträge für Domains löschen, die in Ihren Holy Private Bookmarks enthalten sind?\n\nDies entfernt Besuche ALLER Seiten auf diesen Websites (nicht nur der Lesezeichen).\nDie Aktion kann nicht rückgängig gemacht werden."
+    "message": "⚠️ ALLE Browserverlaufseinträge für Domains löschen, die in Ihren Holy Private Bookmarks vorhanden sind?\n\nDadurch werden Besuche auf ALLEN Seiten dieser Websites entfernt (nicht nur die mit Lesezeichen).\nDiese Aktion kann nicht rückgängig gemacht werden."
   },
   "noBookmarks": {
     "message": "Keine Lesezeichen gefunden – nichts zu löschen."
@@ -173,24 +173,23 @@
   "noDomains": {
     "message": "Keine gültigen Domains in den Lesezeichen gefunden."
   },
-
   "newBookmark": {
     "message": "Neues Lesezeichen"
   },
   "paste": {
     "message": "Einfügen"
   },
-    "ctxnewFolder": {
+  "ctxnewFolder": {
     "message": "Neuer Ordner"
   },
-    "emptyTreeTitle": {
+  "emptyTreeTitle": {
     "message": "Noch keine Lesezeichen"
   },
-    "emptyTreeSubtitle": {
-    "message": "Fügen Sie Ihr erstes Lesezeichen oder Ihren ersten Ordner hinzu, um zu beginnen"
+  "emptyTreeSubtitle": {
+    "message": "Fügen Sie Ihr erstes Lesezeichen oder einen Ordner hinzu, um zu beginnen"
   },
   "historyCleared": {
-    "message": "🧹 Verlauf gelöscht!\n$count$ Besuch(e) von $domains$ Domain(s) entfernt.",
+    "message": "🧹 Verlauf gelöscht!\nEntfernt: $count$ Besuch(e) von $domains$ Domain(s).",
     "placeholders": {
       "count": {
         "content": "$1"
@@ -206,12 +205,6 @@
   "cannotAddPage": {
     "message": "Diese Seite kann nicht hinzugefügt werden (keine gültige URL)"
   },
- "extensionName": {
-    "message": "Holy Private Bookmarks"
-  },
-  "extensionDescription": {
-    "message": "Sicherer, verschlüsselter Lesezeichen-Manager"
-  },
   "supportPageTitle": {
     "message": "Projekt unterstützen — Holy Private Bookmarks"
   },
@@ -219,7 +212,7 @@
     "message": "❤️ Das Projekt unterstützen"
   },
   "supportDescription": {
-    "message": "Wenn die Erweiterung für Sie nützlich ist – jede Hilfe wird geschätzt"
+    "message": "Wenn die Erweiterung für Sie nützlich ist – jede Hilfe ist willkommen"
   },
   "bitcoinTitle": {
     "message": "Bitcoin (BTC)"
@@ -233,8 +226,8 @@
   "copiedToClipboard": {
     "message": "Adresse in die Zwischenablage kopiert!"
   },
-"clickToCopy": {
-    "message": "Zum Kopieren klicken"
+  "clickToCopy": {
+    "message": "Klicken zum Kopieren"
   },
   "importantWarning": {
     "message": "WICHTIGE WARNUNG:"
@@ -243,17 +236,17 @@
     "message": "Dieses Passwort kann NICHT wiederhergestellt werden!"
   },
   "noPasswordReset": {
-    "message": "Es gibt KEINE Option zum Zurücksetzen des Passworts"
+    "message": "Es gibt KEINE Passwort-Zurücksetzen-Funktion"
   },
   "weDontStorePassword": {
     "message": "Wir speichern Ihr Passwort NICHT irgendwo"
   },
   "bookmarksEncrypted": {
-    "message": "Ihre Lesezeichen sind nur mit diesem Passwort verschlüsselt"
+    "message": "Ihre Lesezeichen werden NUR mit diesem Passwort verschlüsselt"
   },
   "savePasswordSecurely": {
     "message": "Speichern Sie dieses Passwort sicher!"
-},
+  },
   "copyUrl": {
     "message": "URL kopieren"
   },
@@ -267,67 +260,126 @@
     "message": "URL in die Zwischenablage kopiert"
   },
   "about": {
-    "message": "Über",
-    "description": "Titel des Abschnitts \"Über\""
+    "message": "Über"
   },
   "aboutExtension": {
-    "message": "Über diese Erweiterung",
-    "description": "Text für den Button \"Über Erweiterung\""
+    "message": "Über die Erweiterung"
   },
   "openGitHub": {
-    "message": "GitHub öffnen",
-    "description": "Text für den Button \"GitHub öffnen\""
+    "message": "GitHub öffnen"
   },
   "close": {
-    "message": "Schließen",
-    "description": "Text für den Button \"Schließen\""
+    "message": "Schließen"
   },
   "features": {
-    "message": "Funktionen",
-    "description": "Titel des Abschnitts \"Funktionen\""
+    "message": "Funktionen"
   },
   "encryption": {
-    "message": "Verschlüsselung",
-    "description": "Titel des Merkmals \"Verschlüsselung\""
+    "message": "Verschlüsselung"
   },
   "encryptionDesc": {
-    "message": "AES-256-Verschlüsselung",
-    "description": "Beschreibung des Merkmals \"Verschlüsselung\""
+    "message": "AES-256-Verschlüsselung"
   },
   "localStorage": {
-    "message": "Lokale Speicherung",
-    "description": "Titel des Merkmals \"Lokale Speicherung\""
+    "message": "Lokale Speicherung"
   },
   "localStorageDesc": {
-    "message": "Daten verbleiben auf Ihrem Gerät",
-    "description": "Beschreibung des Merkmals \"Lokale Speicherung\""
+    "message": "Daten bleiben auf Ihrem Gerät"
   },
   "privacy": {
-    "message": "Datenschutz",
-    "description": "Titel des Merkmals \"Datenschutz\""
+    "message": "Privatsphäre"
   },
   "privacyDesc": {
-    "message": "Kein Tracking oder Analytics",
-    "description": "Beschreibung des Merkmals \"Datenschutz\""
+    "message": "Kein Tracking oder Analytics"
   },
   "openSource": {
-    "message": "WTFPL v2",
-    "description": "Titel des Merkmals \"Open Source\" (Lizenz beibehalten)"
+    "message": "WTFPL v2"
   },
   "viewOnGitHub": {
-    "message": "Auf GitHub ansehen",
-    "description": "Text für den Button \"Auf GitHub ansehen\""
+    "message": "Auf GitHub ansehen"
   },
   "githubRepo": {
-    "message": "GitHub-Repository",
-    "description": "Text für den Button \"GitHub-Repository\""
+    "message": "GitHub Repository"
   },
   "githubRepoDesc": {
-    "message": "Quellcode ansehen, Probleme melden, beitragen",
-    "description": "Beschreibung für das GitHub-Repository"
+    "message": "Quellcode ansehen, Probleme melden, beitragen"
   },
   "version": {
-    "message": "Version",
-    "description": "Versionsbezeichnung"
+    "message": "Version"
+  },
+  "openmanager": {
+    "message": "Manager öffnen"
+  },
+  "managerDesc": {
+    "message": "Vollbild-Lesezeichen-Manager öffnen"
+  },
+  "folders": {
+    "message": "Ordner"
+  },
+  "bookmarks": {
+    "message": "Lesezeichen"
+  },
+  "allBookmarks": {
+    "message": "Alle Lesezeichen"
+  },
+  "bookmarksCount": {
+    "message": "Lesezeichen"
+  },
+  "searchBookmarks": {
+    "message": "Lesezeichen durchsuchen..."
+  },
+  "noBookmarksInFolder": {
+    "message": "Keine Lesezeichen in diesem Ordner"
+  },
+  "addBookmarksToGetStarted": {
+    "message": "Fügen Sie Lesezeichen hinzu, um zu beginnen"
+  },
+  "bookmarkUpdated": {
+    "message": "Lesezeichen aktualisiert"
+  },
+  "bookmarkDeleted": {
+    "message": "Lesezeichen gelöscht"
+  },
+  "renameFolder": {
+    "message": "Ordner umbenennen"
+  },
+  "folderCreated": {
+    "message": "Ordner erfolgreich erstellt"
+  },
+  "managerLocked": {
+    "message": "Manager gesperrt"
+  },
+  "lockManager": {
+    "message": "🔓 Manager sperren"
+  },
+  "manager": {
+    "message": "🗂 Vollständigen Manager öffnen"
+  },
+  "rename": {
+    "message": "Umbenennen"
+  },
+  "deleteFolder": {
+    "message": "Ordner löschen"
+  },
+  "deleteFolderConfirm": {
+    "message": "Ordner \"{0}\" löschen?"
+  },
+  "deleteFolderWarning": {
+    "message": "Alle Inhalte werden dauerhaft gelöscht."
+  },
+  "folderRenamed": {
+    "message": "Ordner erfolgreich umbenannt"
+  },
+  "folderDeleted": {
+    "message": "Ordner erfolgreich gelöscht"
+  },
+  "cannotRenameAll": {
+    "message": "\"Alle Lesezeichen\"-Ordner kann nicht umbenannt werden"
+  },
+  "cannotDeleteAll": {
+    "message": "\"Alle Lesezeichen\"-Ordner kann nicht gelöscht werden"
+  },
+  "foldersCount": {
+    "message": "{0} Ordner"
   }
 }

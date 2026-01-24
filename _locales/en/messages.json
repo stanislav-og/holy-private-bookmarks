@@ -50,7 +50,7 @@
   "settings": {
     "message": "⚙️ Settings"
   },
-   "settingsbtn": {
+  "settingsbtn": {
     "message": "⚙️"
   },
   "changeMasterPassword": {
@@ -78,44 +78,34 @@
     "message": "📥 Import"
   },
   "importFromChrome": {
-    "message": "Import from Chrome",
-    "description": "Title of the Chrome import section"
+    "message": "Import from Chrome"
   },
   "importChromeBookmarks": {
-    "message": "📥 Import all Chrome bookmarks",
-    "description": "Button to import all Chrome bookmarks"
+    "message": "📥 Import all Chrome bookmarks"
   },
   "importChromeBookmarksAdvanced": {
-    "message": "🗂️ Select folders to import",
-    "description": "Button to select folders for import"
+    "message": "🗂️ Select folders to import"
   },
   "importChromeConfirm": {
-    "message": "Import all bookmarks from Chrome? Existing bookmarks will be preserved.",
-    "description": "Confirmation for importing bookmarks from Chrome"
+    "message": "Import all bookmarks from Chrome? Existing bookmarks will be preserved."
   },
   "importChromeSuccess": {
-    "message": "Bookmarks imported successfully!",
-    "description": "Notification for successful bookmark import"
+    "message": "Bookmarks imported successfully!"
   },
   "importChromeError": {
-    "message": "Failed to import bookmarks",
-    "description": "Bookmark import error"
+    "message": "Failed to import bookmarks"
   },
   "selectFoldersToImport": {
-    "message": "Select folders to import",
-    "description": "Title of the folder selection modal"
+    "message": "Select folders to import"
   },
   "selectAll": {
-    "message": "Select all",
-    "description": "Button to select all"
+    "message": "Select all"
   },
   "deselectAll": {
-    "message": "Deselect all",
-    "description": "Button to deselect all"
+    "message": "Deselect all"
   },
   "importSelected": {
-    "message": "Import",
-    "description": "Button to import selected folders"
+    "message": "Import"
   },
   "back": {
     "message": "← Back"
@@ -183,20 +173,19 @@
   "noDomains": {
     "message": "No valid domains found in bookmarks."
   },
-
   "newBookmark": {
     "message": "New bookmark"
   },
   "paste": {
     "message": "Paste"
   },
-    "ctxnewFolder": {
+  "ctxnewFolder": {
     "message": "New folder"
   },
-    "emptyTreeTitle": {
+  "emptyTreeTitle": {
     "message": "No bookmarks yet"
   },
-    "emptyTreeSubtitle": {
+  "emptyTreeSubtitle": {
     "message": "Add your first bookmark or folder to get started"
   },
   "historyCleared": {
@@ -216,46 +205,30 @@
   "cannotAddPage": {
     "message": "Cannot add this page (no valid URL)"
   },
- "extensionName": {
-    "message": "Holy Private Bookmarks",
-    "description": "Extension name"
-  },
-  "extensionDescription": {
-    "message": "Secure encrypted bookmark manager",
-    "description": "Extension description"
-  },
   "supportPageTitle": {
-    "message": "Support project — Holy Private Bookmarks",
-    "description": "Donate page title"
+    "message": "Support project — Holy Private Bookmarks"
   },
   "supportTitle": {
-    "message": "❤️ Support the Project",
-    "description": "Main title on donate page"
+    "message": "❤️ Support the Project"
   },
   "supportDescription": {
-    "message": "If the extension is useful to you — any help is appreciated",
-    "description": "Description on donate page"
+    "message": "If the extension is useful to you — any help is appreciated"
   },
   "bitcoinTitle": {
-    "message": "Bitcoin (BTC)",
-    "description": "Bitcoin donation title"
+    "message": "Bitcoin (BTC)"
   },
   "ethereumTitle": {
-    "message": "Ethereum (ETH)",
-    "description": "Ethereum donation title"
+    "message": "Ethereum (ETH)"
   },
   "copyAddress": {
-    "message": "Copy address",
-    "description": "Copy address button text"
+    "message": "Copy address"
   },
   "copiedToClipboard": {
-    "message": "Address copied to clipboard!",
-    "description": "Notification when address is copied"
+    "message": "Address copied to clipboard!"
   },
-"clickToCopy": {
-    "message": "Click to copy",
-    "description": "Tooltip for clickable addresses"
-  },  
+  "clickToCopy": {
+    "message": "Click to copy"
+  },
   "importantWarning": {
     "message": "IMPORTANT WARNING:"
   },
@@ -273,86 +246,143 @@
   },
   "savePasswordSecurely": {
     "message": "Save this password securely!"
-},
+  },
   "copyUrl": {
-    "message": "Copy URL",
-    "description": "Copy URL button tooltip"
+    "message": "Copy URL"
   },
   "edit": {
-    "message": "Edit",
-    "description": "Edit button tooltip"
+    "message": "Edit"
   },
   "delete": {
-    "message": "Delete",
-    "description": "Delete button tooltip"
+    "message": "Delete"
   },
   "urlCopied": {
-    "message": "URL copied to clipboard",
-    "description": "URL copied notification"
+    "message": "URL copied to clipboard"
   },
-    "about": {
-    "message": "About",
-    "description": "About section title"
+  "about": {
+    "message": "About"
   },
   "aboutExtension": {
-    "message": "About Extension",
-    "description": "About extension button text"
+    "message": "About Extension"
   },
-
   "openGitHub": {
-    "message": "Open GitHub",
-    "description": "Open GitHub button text"
+    "message": "Open GitHub"
   },
   "close": {
-    "message": "Close",
-    "description": "Close button text"
+    "message": "Close"
   },
   "features": {
-    "message": "Features",
-    "description": "Features section title"
+    "message": "Features"
   },
   "encryption": {
-    "message": "Encryption",
-    "description": "Encryption feature title"
+    "message": "Encryption"
   },
   "encryptionDesc": {
-    "message": "AES-256 encryption",
-    "description": "Encryption feature description"
+    "message": "AES-256 encryption"
   },
   "localStorage": {
-    "message": "Local Storage",
-    "description": "Local storage feature title"
+    "message": "Local Storage"
   },
   "localStorageDesc": {
-    "message": "Data stays on your device",
-    "description": "Local storage feature description"
+    "message": "Data stays on your device"
   },
   "privacy": {
-    "message": "Privacy",
-    "description": "Privacy feature title"
+    "message": "Privacy"
   },
   "privacyDesc": {
-    "message": "No tracking or analytics",
-    "description": "Privacy feature description"
+    "message": "No tracking or analytics"
   },
   "openSource": {
-    "message": "WTFPL v2",
-    "description": "Open source feature title"
+    "message": "WTFPL v2"
   },
   "viewOnGitHub": {
-    "message": "View on GitHub",
-    "description": "View on GitHub button"
+    "message": "View on GitHub"
   },
   "githubRepo": {
-    "message": "GitHub Repository",
-    "description": "GitHub repository button text"
+    "message": "GitHub Repository"
   },
   "githubRepoDesc": {
-    "message": "View source code, report issues, contribute",
-    "description": "GitHub repository description"
+    "message": "View source code, report issues, contribute"
   },
   "version": {
-    "message": "Version",
-    "description": "Version label"
+    "message": "Version"
+  },
+  "openmanager": {
+    "message": "Open manager"
+  },
+  "managerDesc": {
+    "message": "Open fullscreen bookmark manager"
+  },
+  "folders": {
+    "message": "Folders"
+  },
+    "bookmarks": {
+    "message": "bookmarks"
+  },
+  "allBookmarks": {
+    "message": "All Bookmarks"
+  },
+  "bookmarksCount": {
+    "message": "bookmarks"
+  },
+  "searchBookmarks": {
+    "message": "Search bookmarks..."
+  },
+  "noBookmarksInFolder": {
+    "message": "No bookmarks in this folder"
+  },
+  "addBookmarksToGetStarted": {
+    "message": "Add bookmarks to get started"
+  },
+  "bookmarkUpdated": {
+    "message": "Bookmark updated"
+  },
+  "bookmarkDeleted": {
+    "message": "Bookmark deleted"
+  },
+  "renameFolder": {
+    "message": "Rename folder"
+  },
+  "folderCreated": {
+    "message": "Folder created successfully"
+  },
+  "managerLocked": {
+    "message": "Manager locked"
+  },
+  "lockManager": {
+    "message": "🔓 Lock Manager"
+  },
+  "manager": {
+    "message": "🗂 Open full manager"
+  },
+  "rename": {
+    "message": "Rename"
+  },
+  "renameFolder": {
+    "message": "Rename folder"
+  },
+  "deleteFolder": {
+    "message": "Delete folder"
+  },
+  "deleteFolderConfirm": {
+    "message": "Delete folder \"{0}\"?"
+  },
+  "deleteFolderWarning": {
+    "message": "All content will be permanently deleted."
+  },
+  "folderRenamed": {
+    "message": "Folder renamed successfully"
+  },
+  "folderDeleted": {
+    "message": "Folder deleted successfully"
+  },
+  "cannotRenameAll": {
+    "message": "Cannot rename \"All Bookmarks\" folder"
+  },
+  "cannotDeleteAll": {
+    "message": "Cannot delete \"All Bookmarks\" folder"
+  },
+  "foldersCount": {
+    "message": "{0} folders"
   }
 }
